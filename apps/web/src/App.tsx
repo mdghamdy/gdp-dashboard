@@ -1,7 +1,18 @@
+import ContextBar from "./components/ContextBar";
+
 const App = () => {
   return (
     <main className="min-h-screen bg-canvas text-text">
-      <div className="mx-auto flex min-h-screen max-w-4xl flex-col items-center justify-center gap-6 px-6 text-center">
+      <ContextBar
+        caseId="CASE-1042"
+        program="Cardio Care"
+        status="Review pending"
+        urgency="High"
+        urgencyReason="Time-sensitive escalation"
+        actionBy="Today, 16:00"
+        owner="Ops Queue A"
+      />
+      <div className="mx-auto flex min-h-[calc(100vh-56px)] max-w-4xl flex-col items-center justify-center gap-6 px-6 text-center">
         <span className="rounded-full border border-border px-3 py-1 text-caption uppercase tracking-widest text-text/70">
           GDP Dashboard
         </span>
