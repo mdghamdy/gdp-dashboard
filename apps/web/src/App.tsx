@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ContextBar from "./components/ContextBar";
 import SignalZone, { type Signal } from "./components/SignalZone";
+import CarePlanDashboard from "./pages/CarePlanDashboard";
 import LandingFlow from "./routes/LandingFlow";
 
 const signals: Signal[] = [
@@ -43,13 +44,15 @@ const App = () => {
             element={
               <>
                 <ContextBar
+                  patientInitials="J.D."
+                  ageBand="35-44"
                   caseId="CASE-1042"
+                  patientIdMasked="PT-00YY"
+                  mpiMasked="MPI-0Y"
                   program="Cardio Care"
                   status="Review pending"
                   urgency="High"
-                  urgencyReason="Time-sensitive escalation"
-                  actionBy="Today, 16:00"
-                  owner="Ops Queue A"
+                  lastReview="Today, 16:00"
                 />
                 <div className="mx-auto flex min-h-[calc(100vh-56px)] max-w-5xl flex-col items-center gap-8 px-6 py-12 text-center">
                   <span className="rounded-full border border-border px-3 py-1 text-caption uppercase tracking-widest text-text/70">
@@ -77,6 +80,7 @@ const App = () => {
               </>
             }
           />
+          <Route path="/care-plans/:caseId" element={<CarePlanDashboard />} />
           <Route path="/l/:token" element={<LandingFlow />} />
         </Routes>
       </main>
