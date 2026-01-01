@@ -1,19 +1,33 @@
-# :earth_americas: GDP dashboard template
+# GDP Dashboard Monorepo
 
-A simple Streamlit app showing the GDP of different countries in the world.
+This repository is a pnpm workspace containing a Vite + React + Tailwind web app and a Fastify + TypeScript API.
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://gdp-dashboard-template.streamlit.app/)
+## Structure
 
-### How to run it on your own machine
+- `apps/web` — React client (Vite + Tailwind)
+- `services/api` — Fastify API (TypeScript)
 
-1. Install the requirements
+## Getting started
 
-   ```
-   $ pip install -r requirements.txt
-   ```
+```bash
+pnpm install
+```
 
-2. Run the app
+## Common commands
 
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+```bash
+# Run everything in watch mode
+pnpm dev
+
+# Run only the web app
+pnpm --filter @gdp-dashboard/web dev
+
+# Run only the API
+pnpm --filter @gdp-dashboard/api dev
+
+# Lint all workspaces
+pnpm lint
+
+# Run all tests
+pnpm test
+```
