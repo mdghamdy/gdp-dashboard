@@ -1,12 +1,12 @@
 const App = () => {
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-100">
+    <main className="min-h-screen bg-canvas text-text">
       <div className="mx-auto flex min-h-screen max-w-4xl flex-col items-center justify-center gap-4 px-6 text-center">
-        <span className="rounded-full border border-slate-800 px-3 py-1 text-xs uppercase tracking-widest text-slate-400">
+        <span className="rounded-full border border-border px-3 py-1 text-caption uppercase tracking-widest text-text/70">
           GDP Dashboard
         </span>
-        <h1 className="text-3xl font-semibold sm:text-4xl">Setup complete</h1>
-        <p className="text-sm text-slate-400">
+        <h1 className="text-h1">Setup complete</h1>
+        <p className="text-body text-text/70">
           Vite, React, and Tailwind are configured. Add business logic when ready.
         </p>
       </div>

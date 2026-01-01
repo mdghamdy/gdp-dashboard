@@ -4,4 +4,12 @@
 
 :root {
   font-family: "Inter", system-ui, sans-serif;
+  --color-canvas: #0b1120;
+  --color-surface: #0f172a;
+  --color-text: #e2e8f0;
+  --color-border: #1e293b;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #38bdf8;
 }
