@@ -33,13 +33,6 @@ Use separate terminals (or tmux sessions), not only `pnpm dev` in one pane, when
 
 Dashboard-only testing needs **web only** (`http://localhost:5173/`). Token landing (`http://localhost:5173/l/demo-token`) needs **web + API**.
 
-### API dependency note (Fastify 4)
-On a clean `pnpm install` from `main`, `@fastify/cors@10` is incompatible with Fastify 4 and **`pnpm --filter @gdp-dashboard/api dev` fails** until CORS is aligned. For local/cloud dev, run once:
-
-`pnpm --filter @gdp-dashboard/api add @fastify/cors@^9`
-
-Then reinstall if needed. Builds (`pnpm --filter @gdp-dashboard/api build`) still succeed without this step; only the dev/runtime server registration fails.
-
 ### Lint / test caveats
 - **Lint**: API ESLint may report `'process' is not defined` on `server.ts` until Node globals are configured in ESLint.
 - **Web unit tests**: Vitest needs `test.globals: true` in `apps/web/vite.config.ts` (tests use `describe`/`it` without imports). Until fixed, `pnpm test` fails on web despite `vitest/globals` in tsconfig.
